@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:elearning/screens/auth/auth_page.dart';
 import 'package:elearning/screens/pages/homepage/calculator/calculator_page.dart';
 import 'package:elearning/screens/pages/homepage/insurance/insurance_page.dart';
 import 'package:elearning/screens/pages/homepage/insurance_claim/insurance_claim_page.dart';
 import 'package:elearning/screens/pages/homepage/team/our_team.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../login/login_page.dart';
@@ -38,6 +39,7 @@ class HomePage extends StatefulWidget {
 //   }
 // }
 class _HomePageState extends State<HomePage> {
+  final user = FirebaseAuth.instance.currentUser!;
   // bool showLoginPage = true;
 
   // void toggleScreens() {
@@ -126,6 +128,14 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1),
                             ),
+                            // Text('Signed In As: ' + user.email!),
+                            // MaterialButton(
+                            //   onPressed: () {
+                            //     FirebaseAuth.instance.signOut();
+                            //   },
+                            //   color: Colors.deepPurple[200],
+                            //   child: Text('Sign Out'),
+                            // ),
                           ],
                         ),
                       ),
@@ -169,7 +179,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CalculatorPage(),
+                                    builder: (context) =>
+                                        CropInsuranceCalculatorApp(),
                                   ),
                                 );
                                 break;
@@ -196,17 +207,19 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => OurTeamPage(),
+                                    builder: (context) => AboutUsPage(),
                                   ),
                                 );
+
                                 break;
 
                               case 5:
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AuthPage()),
-                                );
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) => AuthPage()),
+                                // );
+                                FirebaseAuth.instance.signOut();
                                 break;
                             }
                           },

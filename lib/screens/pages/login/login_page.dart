@@ -57,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                 Icon(
                   Icons.energy_savings_leaf,
                   size: 100,
+                  color: Colors.green[900],
                 ),
 
                 SizedBox(
