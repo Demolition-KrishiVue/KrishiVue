@@ -3,7 +3,7 @@
 import 'package:elearning/screens/auth/auth_page.dart';
 import 'package:elearning/screens/pages/homepage/calculator/calculator_page.dart';
 import 'package:elearning/screens/pages/homepage/insurance/insurance_page.dart';
-import 'package:elearning/screens/pages/homepage/insurance_claim/insurance_claim_page.dart';
+import 'package:elearning/screens/pages/homepage/insurance_claim/Privacy_policy.dart';
 import 'package:elearning/screens/pages/homepage/team/our_team.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
     "assets/images/weather.png",
     "assets/images/calculator.png",
     "assets/images/insurance.png",
-    "assets/images/claim.png",
+    "assets/images/privacy.png",
     "assets/images/about_us.png",
     "assets/images/log_out.png",
   ];
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
     "Weather Forecast",
     "Insurance Calculator",
     "Insuarance Now",
-    "Claim Insurance",
+    "Privacy",
     "Our Team",
     "Log Out"
   ];
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => WeatherPage(),
+                                    builder: (context) => WeatherHomePage(),
                                   ),
                                 );
                                 break;
@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ClaimInsurancePage(),
+                                    builder: (context) => PrivacyPolicyApp(),
                                   ),
                                 );
                                 break;

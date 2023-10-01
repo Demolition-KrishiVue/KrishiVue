@@ -35,7 +35,7 @@ class _CropInsuranceCalculatorState extends State<CropInsuranceCalculator> {
   void calculateInsurance() {
     double landArea = double.tryParse(_landController.text) ?? 0.0;
     double cropValue = double.tryParse(_cropController.text) ?? 0.0;
-    double insuranceMultiplier = 0.75;
+    double insuranceMultiplier = 0.000005;
     // double seasonMultiplier = double.tryParse(_seasonController.text) ?? 1.0;
 
     setState(() {
@@ -140,7 +140,7 @@ class _CropInsuranceCalculatorState extends State<CropInsuranceCalculator> {
             ),
             SizedBox(height: 16.0),
             Text(
-              'Insurance Amount: \$${insuranceAmount.toStringAsFixed(2)}',
+              'Insurance Amount: \$ETH{insuranceAmount.toStringAsFixed(2)}',
               style: TextStyle(fontSize: 18.0),
             ),
           ],
